@@ -1,0 +1,7 @@
+{
+  "name": "android-project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
