@@ -1,6 +1,3 @@
-import MessageListItem from '../components/MessageListItem';
-import { useState } from 'react';
-import { Message, getMessages } from '../data/messages';
 import {
   IonContent,
   IonHeader,
@@ -10,17 +7,20 @@ import {
   IonRefresherContent,
   IonTitle,
   IonToolbar,
-  useIonViewWillEnter
-} from '@ionic/react';
-import './Home.css';
+  useIonViewWillEnter,
+} from "@ionic/react";
+import { useState } from "react";
+import CreateTodo from "../components/CreateTodo";
+import TodoItem from "../components/TodoItem";
+import { getTodos, Todo } from "../data/todos";
+import "./Home.css";
 
 const Home: React.FC = () => {
-
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   useIonViewWillEnter(() => {
-    const msgs = getMessages();
-    setMessages(msgs);
+    const msgs = getTodos();
+    setTodos(msgs);
   });
 
   const refresh = (e: CustomEvent) => {
@@ -43,14 +43,36 @@ const Home: React.FC = () => {
 
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">
-              Inbox
-            </IonTitle>
+            <IonTitle size="large">Inbox</IonTitle>
           </IonToolbar>
         </IonHeader>
 
+        <CreateTodo
+          onCreate={(newTodoTitle) =>
+            setTodos([
+              ...todos,
+              {
+                id: todos.length + 1,
+                title: newTodoTitle,
+                isCompleted: false,
+              },
+            ])
+          }
+        />
         <IonList>
-          {messages.map(m => <MessageListItem key={m.id} message={m} />)}
+          {todos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              onChange={(newValue) => {
+                setTodos(
+                  todos.map((t) =>
+                    t.id === todo.id ? { ...t, isCompleted: newValue } : t
+                  )
+                );
+              }}
+            />
+          ))}
         </IonList>
       </IonContent>
     </IonPage>

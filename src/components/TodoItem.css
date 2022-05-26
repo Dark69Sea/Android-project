@@ -49,8 +49,12 @@ ion-item ion-note.md {
   margin: 16px 10px 16px 16px;
 }
 
-.dot-unread {
+.dot-completed {
   background: var(--ion-color-primary);
+}
+
+.dot-in-progress {
+  background: var(--ion-color-danger);
 }
 
 ion-footer ion-title {
