@@ -5,9 +5,10 @@ import "./TodoItem.css";
 interface TodoItemProps {
   todo: Todo;
   onChange: (isComplete: boolean) => any;
+  onDelete: (id: number) => any;
 }
 
-const TodoItem: React.FC<TodoItemProps> = ({ todo, onChange }) => {
+const TodoItem: React.FC<TodoItemProps> = ({ todo, onChange, onDelete }) => {
   return (
     <IonItem onClick={() => onChange(!todo.isCompleted)} detail={false}>
       <div
@@ -21,9 +22,17 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onChange }) => {
           {todo.title}
           <span className="date">
             <IonNote>#{todo.id}</IonNote>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete(todo.id);
+              }}
+              className="delete-button"
+            >
+              delete
+            </button>
           </span>
         </h2>
-        {/* <h3>{todo.subject}</h3> */}
       </IonLabel>
     </IonItem>
   );

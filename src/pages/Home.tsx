@@ -28,7 +28,7 @@ const Home: React.FC = () => {
       e.detail.complete();
     }, 3000);
   };
-
+  
   return (
     <IonPage id="home-page">
       <IonHeader>
@@ -70,6 +70,9 @@ const Home: React.FC = () => {
                     t.id === todo.id ? { ...t, isCompleted: newValue } : t
                   )
                 );
+              }}
+              onDelete={(todoId)=>{
+                setTodos(todos.filter(t=>t.id !== todoId))
               }}
             />
           ))}

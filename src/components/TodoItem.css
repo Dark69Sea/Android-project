@@ -61,3 +61,17 @@ ion-footer ion-title {
   font-size: 11px;
   font-weight: normal;
 }
+
+.delete-button{
+  transition: all 0.3s ease;
+  color: #ea2027;
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+}
+
+.delete-button:hover{
+  background-color: rgba(234, 32, 39, 20%);
+}
