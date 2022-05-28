@@ -18,11 +18,11 @@ const CreateTodo: React.FC<CreateTodoInterface> = ({ onCreate }) => {
   return (
     <div className="create-todo-container">
       <IonInput
-        placeholder="Add a new todo item..."
+        placeholder="افزودن کار جدید..."
         value={value}
         onIonChange={(e) => setValue(e.detail.value!)}
       />
-      <IonButton onClick={handleCreate}>Add</IonButton>
+      <IonButton onClick={handleCreate}>افزودن</IonButton>
     </div>
   );
 };

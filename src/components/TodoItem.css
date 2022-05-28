@@ -1,6 +1,7 @@
 ion-item {
-  --padding-start: 0;
-  --inner-padding-end: 0;
+  --padding-start: 10px;
+  --inner-padding-end: 10px;
+  cursor: pointer;
 }
 
 ion-label {
@@ -66,7 +67,7 @@ ion-footer ion-title {
   transition: all 0.3s ease;
   color: #ea2027;
   padding: 10px 15px;
-  margin-left: 10px;
+  margin-right: 10px;
   border-radius: 4px;
   background-color: transparent;
   outline: none;

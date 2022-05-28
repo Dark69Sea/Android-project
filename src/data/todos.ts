@@ -6,22 +6,22 @@ export interface Todo {
 
 const todos: Todo[] = [
   {
-    title: "Finish the android project",
+    title: "ساخت پروژه برنامه نویسی موبایل",
     isCompleted: true,
     id: 0,
   },
   {
-    title: "Learn Capacitor",
+    title: "ورزش صبحگاهی",
     isCompleted: true,
     id: 1,
   },
   {
-    title: "Learn JavaScript",
-    isCompleted: true,
+    title: "شرکت در مهمانی",
+    isCompleted: false,
     id: 2,
   },
   {
-    title: "Study for exams",
+    title: "انجام تکالیف دانشگاه",
     isCompleted: true,
     id: 3,
   },

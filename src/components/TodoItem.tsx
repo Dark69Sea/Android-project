@@ -18,9 +18,12 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onChange, onDelete }) => {
         }`}
       ></div>
       <IonLabel className="ion-text-wrap">
-        <h2 style={todo.isCompleted ? { textDecoration: "line-through" } : {}}>
+        <h2 className ="ion-todo-title" style={todo.isCompleted ? { textDecoration: "line-through" } : {}}>
           {todo.title}
-          <span className="date">
+        </h2>
+        
+      </IonLabel>
+      <span className="date">
             <IonNote>#{todo.id}</IonNote>
             <button
               onClick={(e) => {
@@ -29,11 +32,9 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onChange, onDelete }) => {
               }}
               className="delete-button"
             >
-              delete
+              حذف
             </button>
           </span>
-        </h2>
-      </IonLabel>
     </IonItem>
   );
 };

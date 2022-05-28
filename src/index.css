@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Estedad-Medium";
+  src: url(./assets/fonts/estedad/Estedad-Medium.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "Estedad-Medium", Arial, Helvetica, sans-serif;
+}
+body {
+  direction: rtl;
+}
